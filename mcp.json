@@ -1,0 +1,80 @@
+{
+  "version": "1.0",
+  "servers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./"
+      ],
+      "env": {}
+    },
+
+    "shell": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-shell"
+      ],
+      "env": {}
+    },
+
+    "git": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-git",
+        "./"
+      ],
+      "env": {}
+    },
+
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_TOKEN": "${env:GITHUB_TOKEN}"
+      }
+    },
+
+    "vercel": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-shell"
+      ],
+      "env": {
+        "VERCEL_TOKEN": "${env:VERCEL_TOKEN}",
+        "VERCEL_ORG_ID": "${env:VERCEL_ORG_ID}",
+        "VERCEL_PROJECT_ID": "${env:VERCEL_PROJECT_ID}"
+      }
+    },
+
+    "snyk": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-shell"
+      ],
+      "env": {
+        "SNYK_TOKEN": "${env:SNYK_TOKEN}"
+      }
+    },
+
+    "node": {
+      "command": "node",
+      "args": [],
+      "env": {}
+    },
+
+    "npm": {
+      "command": "npm",
+      "args": [],
+      "env": {}
+    }
+  }
+}
